@@ -1,0 +1,37 @@
+{
+  "name": "Hubraft",
+  "keywords": [
+   "hubraft",
+   "raft"
+ ],
+  "version": "0.1.0",
+  "readmeFilename": "README.md",
+  "description": "Election only raft like implementation designed for resilient overseers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit --silent=true"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pontal/hubraft"
+  },
+  "author": "Guilherme Viebig",
+  "license": "MIT",
+  "homepage": "http://www.pontalservicos.com.br/",
+  "engines": {
+    "node": ">=6.10.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0",
+    "restify": "^4.3.0"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  }
+}
