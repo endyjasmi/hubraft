@@ -1,9 +1,9 @@
 {
   "name": "Hubraft",
   "keywords": [
-   "hubraft",
-   "raft"
- ],
+    "hubraft",
+    "raft"
+  ],
   "version": "0.1.0",
   "readmeFilename": "README.md",
   "description": "Election only raft like implementation designed for resilient overseers",
