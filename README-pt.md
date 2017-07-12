@@ -40,7 +40,7 @@ O módulo deve receber um objeto nesta estrutura para que o mesmo funcione:
 }
 ```
 O objeto "raft" recebe três itens:
-O primeiro "heartbeat" é para informar ao módulo o intervalo em milisegundos dos heartbeat que seram emitidos pelo líder do Hubraft.
+O primeiro "heartbeat" é para informar ao módulo o intervalo em milisegundos dos heartbeat que serão emitidos pelo líder do Hubraft.
 Valor padrão 300.
 
 O segundo é o "minElection", ele representa o valor minimo para iniciar uma eleição.

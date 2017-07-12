@@ -1,6 +1,6 @@
 ### Installing
 
-For install the module, open your project in terminal and enter:
+To install the module, open your project in the terminal and enter:
 
 ```javascript
 npm install --save hubraft
@@ -8,7 +8,7 @@ npm install --save hubraft
 
 ### Starting
 
-Before install the module by npm, import it:
+Afther install the module by npm, import it:
 
 ```javascript
 const hubraft = require('hubraft');
@@ -38,27 +38,25 @@ The module receive an object in this structure:
 }
 ```
 
-The key "raft" receive tree itens:
+The key "raft" receive three items:
 
-First "heartbeat", it's to inform to the module the interval in milliseconds of heartbeat to be send by the leader of Hubraft.
+The first "heartbeat", informs to the module the interval in milliseconds of heartbeat to be sent by the leader of Hubraft.
 Default value: 300.
 
-Second is "minElection", it represents the minimum value to start election.
+The second is "minElection", it represents the minimum value to start the election.
 Default value: 800.
 
-Thrid and last is the "maxElection", it represents the maximum value to start election.
+The thrid and last ones are "maxElection", it represents the maximum value to start  the election.
 Default value: 1000.
 
-The key "me", receive the information to current server , that is your machine/server what will receive/send heartbeats of servers if it's leader/follower  respectively.
-Is required.
+The key "me" receives the information from the current server , that is your machine/server what will receive/send heartbeats of servers if it's leader/follower  respectively, is required.
 
-The key "servers", receive an array of objects for info the servers which will be used on request heartbeat.
-Is required.
+The key "servers" receives an array of objects to inform the servers which will be used on request heartbeat, is required.
 
-Now just instanciate and pass the object create for the module.
+Now just instanciate and pass the object created to the module.
 
 ```javascript
-const hubraft = require('./hubraft');
+const hubraft = require('hubraft');
 
 let options = {
   raft: {
@@ -86,7 +84,7 @@ const hub = hubraft.init(options)
 
 ### Usage
 
-The Hubraft send the following events :
+The Hubraft sends the following events :
 
 - becomeLeader
 - becomeFollower
@@ -94,10 +92,10 @@ The Hubraft send the following events :
 
 ### - becomeLeader
 
-When the server is elected leader the event "becomeLeader" is send for other servers, and to apply some type to behavior, usage this script:
+When the server is elected leader the event "becomeLeader" is sent to other servers, and to apply some type to behavior, use this script:
 
 ```javascript
-const hubraft = require('./hubraft');
+const hubraft = require('hubraft');
 
 let options = {...};
 
@@ -111,10 +109,10 @@ hub.eventEmitter.on('becomeLeader', () => {
 
 ### - becomeFollower
 
-The event "becomeFollower", is send when another server is elected leader, this way the current server is left in "Stand by", and just stay listening the heartbeat of leader.
+The event "becomeFollower" is sent when another server is elected leader, this way the current server is left in "Stand by", and just keeps listening to the leader's heartbeat
 
 ```javascript
-const hubraft = require('./hubraft');
+const hubraft = require('hubraft');
 
 let options = {...};
 
@@ -127,7 +125,7 @@ hub.eventEmitter.on('becomeFollower', () => {
 
 ### - becomeCandidate
 
-The event "becomeCandidate" is send wen the server was a "Follower" and the leader stop send heartbeat, and by default when a will come "Candidate", automatically asks for it election.
+The event "becomeCandidate" is sent when the server was a "Follower" and the leader stops sending the heartbeat, and by default when a server becomes a "Candidate", he automatically asks for an election.
 
 ##
 
@@ -135,7 +133,7 @@ It is the responsibility of the developer to pause and start their system based 
 
 ### Run tests
 
-For run test, just execute command
+To run test, just execute command
 
 ```javascript
 npm test
