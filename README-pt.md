@@ -59,7 +59,7 @@ Agora basta instânciar e passar o objeto criado para o módulo.
 
 
 ```javascript
-const hubraft = require('./hubraft');
+const hubraft = require('hubraft');
 
 let options = {
   raft: {
@@ -97,7 +97,7 @@ O Hubraft emite os seguintes eventos:
 Quando o servidor é eleito líder, o evento "becomeLeader" é emitido, e para aplicar algum tipo de comportamento use o seguinte script no arquivo que o Hubraft foi instanciado :
 
 ```javascript
-const hubraft = require('./hubraft');
+const hubraft = require('hubraft');
 
 let options = {...};
 
@@ -115,7 +115,7 @@ O evento "becomeFollower" é emitido quando outro servidor é eleito líder, des
 
 
 ```javascript
-const hubraft = require('./hubraft');
+const hubraft = require('hubraft');
 
 let options = {...};
 
