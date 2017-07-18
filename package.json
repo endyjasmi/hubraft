@@ -1,11 +1,10 @@
 {
-  "name": "hubraft",
+  "name": "@pontal/hubraft",
   "keywords": [
     "hubraft",
     "raft"
   ],
-  "version": "0.1.0",
-  "readmeFilename": "README.md",
+  "version": "0.2.0",
   "description": "Election only raft like implementation designed for resilient overseers",
   "main": "index.js",
   "scripts": {
@@ -17,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pontal/hubraft"
+    "url": "git+https://github.com/Pontal/hubraft.git"
   },
   "author": "Guilherme Viebig",
   "license": "MIT",
@@ -33,5 +32,8 @@
   },
   "devDependencies": {
     "jest": "^20.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Pontal/hubraft/issues"
   }
 }
