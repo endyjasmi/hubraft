@@ -1,14 +1,11 @@
-const candidate = require('./../lib/candidate')({raft: {
+const candidate = require('./../lib/candidate')({
   heartbeatInterval: 300,
   minElectionTimeout: 800,
-  maxElectionTimeout: 1000
-},
-  me: {
-    name: 'cluster1',
-    host: 'localhost',
-    port: 7070
-  },
-  servers: [{
+  maxElectionTimeout: 1000,
+  name: 'cluster1',
+  host: 'localhost',
+  port: 7070,
+  nodes: [{
     name: 'cluster2',
     host: 'localhost',
     port: 4040
@@ -20,7 +17,7 @@ const candidate = require('./../lib/candidate')({raft: {
   }]
 });
 
-test('Caso um servidor caia, uma nova eleição é iniciada', (done) => {
+test('Server is down, new election start', (done) => {
   const spawn = require('child_process').spawn;
   const firstHubraft = spawn('node',
     ['index.js',

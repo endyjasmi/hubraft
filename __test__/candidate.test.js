@@ -1,14 +1,11 @@
-const candidate = require('./../lib/candidate')({raft: {
+const candidate = require('./../lib/candidate')({
   heartbeatInterval: 300,
   minElectionTimeout: 800,
-  maxElectionTimeout: 1000
-},
-  me: {
-    name: 'cluster1',
-    host: 'localhost',
-    port: 9990
-  },
-  servers: [{
+  maxElectionTimeout: 1000,
+  name: 'cluster1',
+  host: 'localhost',
+  port: 9990,
+  nodes: [{
     name: 'cluster2',
     host: 'localhost',
     port: 9991
@@ -18,7 +15,7 @@ const candidate = require('./../lib/candidate')({raft: {
 test('Checking votes without another server On! Who started should become the leader', () => {
   expect.assertions(1);
   return candidate[1].startElectionAsync().then(resultElection => {
-    expect(resultElection).toBe(true)
+    expect(resultElection).toBe(true);
   });
 });
 
@@ -30,17 +27,14 @@ test('Checking votes if you have another servers ON', () => {
   vm.createContext(sandbox);
   const code = `
   (function(require) {
-    const hubraft = require('./../lib/hubraft')({raft: {
+    const hubraft = require('./../lib/hubraft')({
         heartbeatInterval:300,
         minElectionTimeout:800,
-        maxElectionTimeout:1000
-        },
-        me: {
+        maxElectionTimeout:1000,
         name:'cluster2',
         host:'localhost',
-        port: 9991
-        },
-        servers: [{
+        port: 9991,
+        nodes: [{
           name: 'cluster1',
           host: 'localhost',
           port: 9990
