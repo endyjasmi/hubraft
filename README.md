@@ -7,12 +7,12 @@ Hubraft does the ellection of nodes when the leader stop sending hearbeats, but 
 
 ### Install
 ```javascript
-npm install --save hubraft
+npm install --save @pontal/hubraft
 ```
 ### Initializing
 
 ```javascript
-const hubraft = require('hubraft')(
+const hubraft = require('@pontal/hubraft')(
     heartbeatInterval: 300, // optional
     minElectionTimeout: 800, // optional
     maxElectionTimeout: 1000, // optional
@@ -53,7 +53,7 @@ The Hubraft emits the following events :
 When the server is elected leader the event "becomeLeader" is sent to other servers, and to apply some type to behavior, use this script:
 
 ```javascript
-const hubraft = require('hubraft');
+const hubraft = require('@pontal/hubraft');
 
 let options = {...};
 
@@ -70,7 +70,7 @@ hub.eventEmitter.on('becomeLeader', () => {
 The event "becomeFollower" is sent when another server is elected leader, this way the current server is left in "Stand by", and just keeps listening to the leader's heartbeat
 
 ```javascript
-const hubraft = require('hubraft');
+const hubraft = require('@pontal/hubraft');
 
 let options = {...};
 
