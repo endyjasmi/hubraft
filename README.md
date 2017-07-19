@@ -3,7 +3,7 @@ Hubraft is a NodeJs partial implementation of [The Raft Consensus Algorithm](htt
 
 ![alt text](http://danehans.github.io/v3_presentation/images/etcd_raft_consensus.gif "Logo Title Text 1")
 
-Hubraft does the ellection of nodes when the leader stop sending hearbeats, but does not compreends data replication between nodes.
+Hubraft does the election of nodes when the leader stop sending hearbeats, but **does not implements data replication**.
 
 ### Install
 ```javascript
